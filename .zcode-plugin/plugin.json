@@ -1,0 +1,23 @@
+{
+  "name": "codex",
+  "version": "1.0.0",
+  "description": "Use Codex from ZCode to review code or delegate tasks.",
+  "description_i18n": {
+    "en": "Use Codex from ZCode to review code or delegate tasks.",
+    "zh-CN": "Use Codex from ZCode to review code or delegate tasks."
+  },
+  "author": {
+    "name": "Ahmed Mahmoud",
+    "url": "https://github.com/ahmed8-info"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "codex",
+    "openai",
+    "code-review",
+    "delegation"
+  ],
+  "commands": "commands",
+  "skills": "skills",
+  "agents": "agents"
+}

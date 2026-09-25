@@ -1,0 +1,37 @@
+{
+  "description": "Codex Companion hooks for ZCode: session tagging with lazy cleanup, and the optional stop-time review gate.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "process",
+            "command": "node",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/scripts/session-lifecycle-hook.mjs",
+              "SessionStart"
+            ],
+            "timeoutMs": 5000,
+            "statusMessage": "codex: tagging session and pruning stale jobs…"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "process",
+            "command": "node",
+            "args": [
+              "${ZCODE_PLUGIN_ROOT}/scripts/stop-review-gate-hook.mjs"
+            ],
+            "timeoutMs": 900000,
+            "statusMessage": "codex: running stop-time review gate…"
+          }
+        ]
+      }
+    ]
+  }
+}
