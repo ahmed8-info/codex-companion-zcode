@@ -16,4 +16,5 @@ yarn-error.log*
 .vscode/
 .idea/
 *.swp
-*.swo
+# Backups
+.commands-backup/
